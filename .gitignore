@@ -1,0 +1,14 @@
+### 내 설정 ###
+.idea/
+*.iml
+*.class
+out/
+
+### Gradle (스프링 강의부터) ###
+.gradle/
+build/
+
+### 다른 편집기·OS ###
+.vscode/
+.DS_Store
+Thumbs.db
