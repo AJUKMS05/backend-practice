@@ -1,9 +1,6 @@
 package parking;
 
-import parking.policy.ElectricCarFee;
-import parking.policy.FeePolicy;
-import parking.policy.LightCarFee;
-import parking.policy.NormalCarFee;
+import parking.policy.*;
 
 import java.util.Calendar;
 import java.util.Scanner;
@@ -26,8 +23,12 @@ public class ParkingMain {
                 feePolicy = new NormalCarFee();
                 tem = ParkingCashier.process(feePolicy, carTime);
             }
-            else{
+            else if(carType.equals("ELECTRIC")){
                 feePolicy = new ElectricCarFee();
+                tem = ParkingCashier.process(feePolicy, carTime);
+            }
+            else{
+                feePolicy = new TruckCarFee();
                 tem = ParkingCashier.process(feePolicy, carTime);
             }
             Total += tem;
